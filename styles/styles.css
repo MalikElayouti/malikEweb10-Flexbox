@@ -144,5 +144,24 @@ section:nth-of-type(4) article{
         display: flex;
 
         /*for text based nav, distribute the content evenly across the nav bar */
-        background-color:dodgerblue
     }
+
+    nav li {
+        /* tell the list items to grow to fill the available space in the nav bar */
+        flex-grow: 1;
+
+        /* make the list items display flex so we can tell the a tags inside to fill up the space */
+        display: flex;
+    }
+
+    nav ul a {
+        flex-grow: 1;
+        padding: 10px;
+        background-color:aquamarine;
+        text-align: center;
+    }
+        nav ul a:hover {
+            background-color:dodgerblue;
+        }
+       
+     
