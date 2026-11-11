@@ -51,3 +51,98 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+/******************************
+ 
+        MAIN STYLES
+
+******************************/
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color:blueviolet
+}
+
+h1 {
+    font-size: 2.2em;
+    /* ems are relative to the parent element, so if the parent is 16px, 1em = 16px 
+    2.2em = 16 * 2.2 = 35.2px;*/
+
+    padding: 0.5em;
+    /* because the font size of this element is set to 2.2 em or (35.2px), setting padding with em is relative to that font size or 0.5 * 35.2px = 17.6px */
+
+    margin-bottom: 1rem;
+    /* an rem is always releative to the root font size, or the font size
+    on your html element (deafult is 16px) - so 1rem - 16px */
+}
+
+h3 {
+    font-size: 1.6em;
+    padding: 0.5em;
+}
+
+article div {
+    font-size: 2.2em;
+    padding: 10px;
+    border: 2px solid darkblue;
+    background-color: lightblue;
+}
+
+/********************************
+  
+        FLEXBOX STYLES
+
+*********************************/
+
+section:nth-of-type(1) article{
+    /* the nth of type selects the first element that matches the type (in this case, section) */
+
+    /* display: flex by default, makes things sit next to each other */
+    display: flex
+}
+
+section:nth-of-type(2) article{
+    display: flex;
+   
+    /*flex direction lets you control which way the elements stack - whether horizontally (row) or vertically (column) or in reverse */
+    flex-direction: row-reverse;
+}
+
+section:nth-of-type(3) article{
+    display: flex;
+
+    /* justify-content lets you control how elements are distributed in their parent
+    flex-start and flex-end are defined based on reading direction of the user's language
+    -Space-between and space-around are defined based on the size of the elements and the space between them.
+    */
+    justify-content: space-evenly;
+}
+
+section:nth-of-type(4) article{
+    display: flex;
+}
+    /* you can tell the flexed elements to grow to take up the available space in their parent container */
+
+    section:nth-of-type(4) article div{
+        flex-grow: 1;
+
+    }
+
+        section:nth-of-type(4) article div:nth-of-type(2) {
+        /* tell the second div to grow twice as much as the other divs */
+        flex-grow: 2;
+    }
+
+    /***************************************
+
+         FLEXBOX NAV EXAMPLE
+
+    ****************************************/
+
+    nav ul {
+        display: flex;
+
+        /*for text based nav, distribute the content evenly across the nav bar */
+        background-color:dodgerblue
+    }
